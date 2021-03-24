@@ -1,0 +1,13 @@
+{
+    "sourceDB": "mongo",
+    "destinationDB": "mysql",
+    "schemas": [
+        {
+            "source": "Accounts",
+            "destination": "accounts",
+            "sourceDateField": "created_at",
+            "destinationDateField": "created_at",
+            "mapper": "AccountMapper"
+        }
+    ]
+}
