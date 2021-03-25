@@ -13,7 +13,7 @@ import moment from "moment"
 
 
 class MongoConnector implements ConnectorInterface {
-    static LIMIT = 100;
+    static LIMIT = 1;
     private connectionString: string;
     private logger: Logger;
     private connection: Mongoose;
@@ -71,12 +71,12 @@ class MongoConnector implements ConnectorInterface {
     async getToUpdateByPk(collectionName: string, val: any) {
         const conn = this.connection.connection;
         const query: any = {};
-        if (typeof val === "string") {
+        if (typeof val === "string" && val.length > 10) {
             val = new this.connection.mongo.ObjectID(val)
             this.logger.info("casting val to object id");
         }
 
-        if (val) {
+        if (val || val === 0) {
             query._id = {
                 $gt: val
             }

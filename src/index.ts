@@ -11,6 +11,7 @@ import DBFactory from './factory/DBFactory';
 import { ConnectorInterface } from './connectors/ConnectorInterface';
 import { getLogger } from "./helpers/logger";
 import Logger from 'bunyan';
+import moment from "moment";
 
 class Application {
     private static sourceDB: ConnectorInterface;
@@ -113,6 +114,14 @@ class Application {
                                     mappedData[mapperFields[k]] = JSON.stringify(mappedData[mapperFields[k]]);
                                 } else if (mapperConversions[k] === "array") {
                                     mappedData[mapperFields[k]] = mappedData[mapperFields[k]].join(",");
+                                }
+                                else if (mapperConversions[k] === "boolean") {
+                                    if (typeof mappedData[mapperFields[k]] === "string") {
+                                        mappedData[mapperFields[k]] = JSON.parse(mappedData[mapperFields[k]]);
+                                    }
+                                }
+                                else if (mapperConversions[k] === "date") {
+                                    mappedData[mapperFields[k]] = moment(mappedData[mapperFields[k]]).format("YYYY-MM-DD HH:mm:ss")
                                 }
                             }
                         }

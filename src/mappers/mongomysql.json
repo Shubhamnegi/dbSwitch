@@ -37,5 +37,186 @@
             "messageData": "object",
             "productIds": "array"
         }
+    },
+    "appTokenMapper": {
+        "fields": {
+            "brandId": "brand_id",
+            "deviceId": "device_id",
+            "platform": "platform",
+            "productId": "product_id",
+            "updatedAt": "updated_at",
+            "deviceToken": "device_token",
+            "status": "status",
+            "userId": "user_id",
+            "topicId": "topicId",
+            "createdAt": "created_at"
+        },
+        "conversions": {}
+    },
+    "brandNotificationSettingsMapper": {
+        "fields": {
+            "brandId": "brand_id",
+            "platform": "platform",
+            "updatedAt": "updated_at",
+            "status": "status",
+            "fcmSecret": "fcmSecret",
+            "createdAt": "created_at"
+        },
+        "conversions": {}
+    },
+    "brandSettingsMapper": {
+        "fields": {
+            "updatedAt": "updated_at",
+            "createdAt": "created_at",
+            "productId": "product_id",
+            "communicationType": "communication_type",
+            "smsStatus": "sms_status",
+            "brandId": "brand_id",
+            "emailStatus": "email_status",
+            "notificationStatus": "notification_status"
+        },
+        "conversions": {}
+    },
+    "productCommunicationsMapper": {
+        "fields": {
+            "communicationType": "communication_type",
+            "communicationName": "communication_name",
+            "sms": "sms",
+            "email": "email",
+            "notification": "notification",
+            "productId": "product_id",
+            "domain": "domain",
+            "createdAt": "created_at",
+            "updatedAt": "updated_at",
+            "isTransactional": "is_transactional",
+            "isOtp": "is_otp",
+            "transactionType": "transaction_type"
+        },
+        "conversions": {
+            "sms": "boolean",
+            "email": "boolean"
+        }
+    },
+    "countryCommunicationMapper": {
+        "fields": {
+            "communicationType": "communication_type",
+            "countryId": "country_id",
+            "productId": "product_id",
+            "updatedAt": "updated_at",
+            "isSmsDisabled": "sms_status",
+            "isEmailDisabled": "email_status",
+            "createdAt": "created_at"
+        },
+        "conversions": {}
+    },
+    "emailsMapper": {
+        "fields": {
+            "emailId": "email_id",
+            "updatedAt": "updated_at",
+            "status": "status",
+            "comment": "comment",
+            "domain": "domain",
+            "reason": "reason",
+            "event": "event",
+            "createdAt": "created_at"
+        },
+        "conversions": {}
+    },
+    "emailSenderIdsMapper": {
+        "fields": {
+            "account_key": "account_key",
+            "cloud_site_id": "cloud_site_id",
+            "sender_id": "sender_id",
+            "display_name": "display_name",
+            "domain": "domain",
+            "name": "name",
+            "user": "user",
+            "status": "status",
+            "createdAt": "created_at",
+            "updatedAt": "updated_at"
+        },
+        "conversions": {}
+    },
+    "mobileFiltersMapper": {
+        "fields": {
+            "mobileNumber": "mobile_number",
+            "status": "status",
+            "createdAt": "created_at",
+            "updatedAt": "updated_at"
+        },
+        "conversions": {}
+    },
+    "smsSenderIdMapper": {
+        "fields": {
+            "_id": "id",
+            "Client": "client",
+            "countryId": "country_id",
+            "domain_name": "domain_name",
+            "sender_id": "sender_id",
+            "status": "status",
+            "updated_at": "updated_at",
+            "vendor_id": "vendor_id",
+            "created_at": "created_at"
+        },
+        "conversions": {}
+    },
+    "vendorsMapper": {
+        "fields": {
+            "_id": "id",
+            "comment": "comment",
+            "content_type": "content_type",
+            "created_at": "created_at",
+            "feed_id": "feed_id",
+            "integrated_at": "integrated_at",
+            "status": "status",
+            "updated_at": "updated_at",
+            "vendor_name": "vendor_name",
+            "credential": "credential"
+        },
+        "conversions": {
+            "credential": "object",
+            "integrated_at": "date"
+        }
+    },
+    "emailLogsMapper": {
+        "fields": {
+            "subject": "subject",
+            "body": "body",
+            "customId": "custom_id",
+            "request_id": "request_id",
+            "cloudSiteId": "cloud_site_id",
+            "source": "source",
+            "communicationType": "communication_type",
+            "guid": "guid",
+            "globalId": "global_id",
+            "responseId": "response_id",
+            "receivedResponse": "received_response",
+            "updatedResponse": "updated_response",
+            "sentStatus": "sent_status",
+            "userEmail": "user_email",
+            "userName": "username",
+            "field": "field",
+            "valid": "valid",
+            "createdAt": "created_at",
+            "updatedAt": "updated_at",
+            "productName": "product_name",
+            "callbackUrl": "callback_url",
+            "vendorName": "vendor_name",
+            "domain": "domain",
+            "from": "from",
+            "templateData": "template_data",
+            "productId": "product_id",
+            "attachments": "attachments",
+            "replyTo": "reply_to",
+            "events": "events",
+            "delivered_at": "delivered_at",
+            "delivered": "delivered"
+        },
+        "conversions": {
+            "body": "object",
+            "from": "object",
+            "templateData": "object",
+            "attachments": "array"
+        }
     }
 }

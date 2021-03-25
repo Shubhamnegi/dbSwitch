@@ -15,8 +15,88 @@
             "destination": "app_history",
             "sourceDateField": "",
             "destinationDateField": "",
-            "lastpk": null,
+            "lastpk": "600e745e2c5256120033d417",
             "mapper": "appHistoryMapper"
+        },
+        {
+            "source": "appTokens",
+            "destination": "app_token",
+            "sourceDateField": "",
+            "destinationDateField": "",
+            "lastpk": "6013f1e3471e7d83ea0204ea",
+            "mapper": "appTokenMapper"
+        },
+        {
+            "source": "brandNotificationSettings",
+            "destination": "brand_notification_setting",
+            "sourceDateField": "",
+            "destinationDateField": "",
+            "lastpk": "5e9d358a471e7d83ea018780",
+            "mapper": "brandNotificationSettingsMapper"
+        },
+        {
+            "source": "brandSettings",
+            "destination": "brand_settings",
+            "sourceDateField": "",
+            "destinationDateField": "",
+            "lastpk": "5f646cde471e7d83ea01fa3e",
+            "mapper": "brandSettingsMapper"
+        },
+        {
+            "source": "productCommunications",
+            "destination": "product_communication",
+            "sourceDateField": "",
+            "destinationDateField": "",
+            "lastpk": "5f3a4a41e8db301800cc120b",
+            "mapper": "productCommunicationsMapper"
+        },
+        {
+            "source": "countryCommunication",
+            "destination": "country_communication",
+            "sourceDateField": "",
+            "destinationDateField": "",
+            "lastpk": "5cdd4216602bf11b97c25e7a",
+            "mapper": "countryCommunicationMapper"
+        },
+        {
+            "source": "emails",
+            "destination": "suppresed_emails",
+            "sourceDateField": "",
+            "destinationDateField": "",
+            "lastpk": "5d8dace11d60defbcba39914",
+            "mapper": "emailsMapper"
+        },
+        {
+            "source": "emailSenderIds",
+            "destination": "email_sender_id",
+            "sourceDateField": "",
+            "destinationDateField": "",
+            "lastpk": "5f3bd0a7471e7d83ea01f80a",
+            "mapper": "emailSenderIdsMapper"
+        },
+        {
+            "source": "mobileFilters",
+            "destination": "mobile_filters",
+            "sourceDateField": "",
+            "destinationDateField": "",
+            "lastpk": null,
+            "mapper": "mobileFiltersMapper"
+        },
+        {
+            "source": "Sms_sender_ids",
+            "destination": "sms_sender_id",
+            "sourceDateField": "",
+            "destinationDateField": "",
+            "lastpk": 5204,
+            "mapper": "smsSenderIdMapper"
+        },
+        {
+            "source": "Vendors",
+            "destination": "vendor",
+            "sourceDateField": "",
+            "destinationDateField": "",
+            "lastpk": 11,
+            "mapper": "vendorsMapper"
         }
     ]
 }
