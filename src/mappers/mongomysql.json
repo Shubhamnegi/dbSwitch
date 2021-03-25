@@ -1,0 +1,16 @@
+{
+    "accountMapper": {
+        "account_key": "account_key",
+        "communication_type": "communication_type",
+        "communications": "communications",
+        "productId": "product_id",
+        "created_at": "created_at",
+        "name": "name",
+        "comment": "comment",
+        "priority": "priority",
+        "status": "status",
+        "type": "type",
+        "updated_at": "updated_at",
+        "vendor_id": "vendor_id"
+    }
+}

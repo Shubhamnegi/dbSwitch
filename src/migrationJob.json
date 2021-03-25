@@ -7,7 +7,7 @@
             "destination": "accounts",
             "sourceDateField": "created_at",
             "destinationDateField": "created_at",
-            "mapper": "AccountMapper"
+            "mapper": "accountMapper"
         }
     ]
 }

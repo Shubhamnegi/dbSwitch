@@ -6,7 +6,7 @@
   "author": "shubham16negi <shubham16negi@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/.bin/tsc && cp ./src/.env ./dist/ && node dist/index.js",
+    "start": "./node_modules/.bin/tsc && cp ./src/.env ./dist/ && cp -r ./src/mappers ./dist/ && node dist/index.js",
     "build": "./node_modules/.bin/tsc"
   },
   "dependencies": {

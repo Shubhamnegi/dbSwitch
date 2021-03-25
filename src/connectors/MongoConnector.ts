@@ -40,22 +40,37 @@ class MongoConnector implements ConnectorInterface {
         return this.connection;
     }
 
-    async getDataByDate(collectionName: string, dateAt: string, date?: string) {
+    async getDataByDate(collectionName: string, dateAt: string, date: string) {
         const conn = this.connection.connection;
         const query: any = {
         };
+        const sort: any = {}
 
         if (date) {
             const now = moment(date).toDate()
             query[dateAt] = { $gt: now }
         }
 
+        if (dateAt) {
+            sort[dateAt] = 1
+        }
+
         const result = await conn.db
             .collection(collectionName)
             .find(query)
-            .limit(10).toArray();
+            .limit(10)
+            .sort(sort)
+            .toArray();
 
         return result;
+    }
+
+    async getLastDateAt() {
+        return ""
+    }
+
+    async insertData() {
+        return false;
     }
 }
 
