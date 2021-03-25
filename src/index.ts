@@ -91,7 +91,7 @@ class Application {
                     toUpate = await this.getToUpdateByPk(item.source, lastInsertedId);
                     if (toUpate.length > 0) {
                         lastInsertedId = toUpate[toUpate.length - 1][this.sourceDB.getDefaultPk()]
-                        this.logger.info("new lastInsertedId for inserting is:" + lastInsertedId);
+                        this.logger.info(item.source+" new lastInsertedId for inserting is:" + lastInsertedId);
                     }
                 }
 
