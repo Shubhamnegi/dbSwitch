@@ -47,6 +47,10 @@ class MysqlConnector implements ConnectorInterface {
         return date
     }
 
+    async getToUpdateByPk(collectionName: string, val: string) {
+        return []
+    }
+
     async insertData(tableName: String, data: any[]) {
         if (!Array.isArray(data) || data.length === 0) {
             this.logger.error({ error: "Incorrect lenght provided fir insertData, table: " + tableName });
@@ -75,7 +79,7 @@ class MysqlConnector implements ConnectorInterface {
                 }
                 let values = JSON.stringify(keys.map(k => item[k]));
                 values = values.substr(1, values.length - 2);
-                const val = `(${values})${index == data.length - 1 ? ';' : ','}`
+                const val = `(${values})${index === data.length - 1 ? ';' : ','}`
                 query = query + val;
             });
             await this.connection.query(query, { type: QueryTypes.INSERT })
@@ -84,6 +88,14 @@ class MysqlConnector implements ConnectorInterface {
             this.logger.error({ error })
             return false;
         }
+    }
+
+    async disconnect() {
+        await this.connection.close()
+    }
+
+    getDefaultPk() {
+        return "id"
     }
 }
 

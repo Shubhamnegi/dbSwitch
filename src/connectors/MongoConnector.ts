@@ -10,7 +10,10 @@ import { getLogger } from "../helpers/logger";
 import Logger = require("bunyan");
 import moment from "moment"
 
+
+
 class MongoConnector implements ConnectorInterface {
+    static LIMIT = 100;
     private connectionString: string;
     private logger: Logger;
     private connection: Mongoose;
@@ -58,10 +61,33 @@ class MongoConnector implements ConnectorInterface {
         const result = await conn.db
             .collection(collectionName)
             .find(query)
-            .limit(10)
+            .limit(MongoConnector.LIMIT)
             .sort(sort)
             .toArray();
 
+        return result;
+    }
+
+    async getToUpdateByPk(collectionName: string, val: any) {
+        const conn = this.connection.connection;
+        const query: any = {};
+        if (typeof val === "string") {
+            val = new this.connection.mongo.ObjectID(val)
+            this.logger.info("casting val to object id");
+        }
+
+        if (val) {
+            query._id = {
+                $gt: val
+            }
+        }
+
+        const result = await conn.db
+            .collection(collectionName)
+            .find(query)
+            .sort({ _id: 1 })
+            .limit(MongoConnector.LIMIT)
+            .toArray();
         return result;
     }
 
@@ -71,6 +97,14 @@ class MongoConnector implements ConnectorInterface {
 
     async insertData() {
         return false;
+    }
+
+    async disconnect() {
+        await this.connection.disconnect();
+    }
+
+    getDefaultPk() {
+        return "_id"
     }
 }
 

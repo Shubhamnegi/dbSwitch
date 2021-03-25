@@ -1,16 +1,41 @@
 {
     "accountMapper": {
-        "account_key": "account_key",
-        "communication_type": "communication_type",
-        "communications": "communications",
-        "productId": "product_id",
-        "created_at": "created_at",
-        "name": "name",
-        "comment": "comment",
-        "priority": "priority",
-        "status": "status",
-        "type": "type",
-        "updated_at": "updated_at",
-        "vendor_id": "vendor_id"
+        "fields": {
+            "account_key": "account_key",
+            "communication_type": "communication_type",
+            "communications": "communications",
+            "productId": "product_id",
+            "created_at": "created_at",
+            "name": "name",
+            "comment": "comment",
+            "priority": "priority",
+            "status": "status",
+            "type": "type",
+            "updated_at": "updated_at",
+            "vendor_id": "vendor_id"
+        },
+        "conversions": {
+            "communications": "object"
+        }
+    },
+    "appHistoryMapper": {
+        "fields": {
+            "messageData": "message_data",
+            "brandId": "brand_id",
+            "deviceId": "device_id",
+            "deviceToken": "device_token",
+            "platform": "platform",
+            "userId": "user_id",
+            "notificationId": "notification_id",
+            "productId": "product_id",
+            "productIds": "product_ids",
+            "status": "status",
+            "notificationType": "notification_type",
+            "communicationType": "communication_type"
+        },
+        "conversions": {
+            "messageData": "object",
+            "productIds": "array"
+        }
     }
 }

@@ -7,7 +7,16 @@
             "destination": "accounts",
             "sourceDateField": "created_at",
             "destinationDateField": "created_at",
+            "lastpk": null,
             "mapper": "accountMapper"
+        },
+        {
+            "source": "appHistory",
+            "destination": "app_history",
+            "sourceDateField": "",
+            "destinationDateField": "",
+            "lastpk": null,
+            "mapper": "appHistoryMapper"
         }
     ]
 }
